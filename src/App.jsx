@@ -22,9 +22,10 @@ const App = () => {
   useEffect(() => {
     if (!searchQuery) return;
     getImages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
-  const onChangeQuery = query => {
+  function onChangeQuery(query) {
     setImages([]);
     setPage(1);
     setQuery(query);
@@ -32,7 +33,7 @@ const App = () => {
     setModal(false);
     setlargeImage('');
     setError(null);
-  };
+  }
 
   const getImages = async () => {
     setLoading(true);
